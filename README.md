@@ -1,5 +1,5 @@
-# psql-temp
-This is a very simple program for running .sql files in temporary PostgreSQL database so you don't have to setup any users, passwords, etc.
+# Overview
+psql-tmp is a very simple program for running .sql files in temporary PostgreSQL database so you don't have to setup any users, passwords, etc
 
 It was made for learning SQL and testing queries in safe and easy-to-use environment
 

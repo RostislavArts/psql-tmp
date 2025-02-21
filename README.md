@@ -11,4 +11,7 @@ To build this project you must first install the following:
 
 To build use:
 - **make build** to just get binary compiled by Go in your current directory
-- **make install** to compile the binary and move it to /usr/bin (so you can use it by just typing psql-tmp from any directory) *requires sudo privileges*
+- **make install** to compile the binary and move it to /usr/bin (so you can use it by just typing psql-tmp from any directory) *(requires sudo privileges)*
+
+## Usage
+To use it just enter 'psql-tmp /path/to/file.sql' and it will execute your query

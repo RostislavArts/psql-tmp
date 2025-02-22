@@ -7,7 +7,7 @@ It was made for learning SQL and testing queries in safe and easy-to-use environ
 To build this project you must first install the following:
 - [PostgreSQL](https://github.com/postgres/postgres) itself
 - [Go Compiler](https://go.dev/)
-- [pq_tmp](https://github.com/eradman/ephemeralpg/) utility
+- [pg_tmp](https://github.com/eradman/ephemeralpg/) utility
 
 To build use:
 - **make build** to just get binary compiled by Go in your current directory

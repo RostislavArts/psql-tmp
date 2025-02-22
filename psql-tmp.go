@@ -28,14 +28,30 @@ func main() {
 	}
 
 	pgTmpRun := exec.Command("pg_tmp")
-	uri, _ := pgTmpRun.Output()
+	uri, pgTmpErr := pgTmpRun.Output()
+	if pgTmpErr != nil {
+		fmt.Println("pg_tmp:", pgTmpErr)
+		os.Exit(1)
+	}
 
 	psqlRun := exec.Command("psql", string(uri), "-f", sqlScript, "-o", "./psql-output")
-	psqlRun.Run()
+	if err := psqlRun.Run(); err != nil {
+		fmt.Println("psql:", err)
+		os.Exit(1)
+	}
 
 	cat := exec.Command("cat", "./psql-output")
-	output, _ := cat.Output()
+	output, catErr := cat.Output()
+	if pgTmpErr != nil {
+		fmt.Println("cat:", catErr)
+		os.Exit(1)
+	}
+
 	fmt.Println(string(output))
 
-	exec.Command("rm", "./psql-output").Run()
+	remove := exec.Command("rm", "./psql-output")
+	if err := remove.Run(); err != nil {
+		fmt.Println("rm:", err)
+		os.Exit(1)
+	}
 }

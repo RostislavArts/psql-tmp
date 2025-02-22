@@ -12,6 +12,10 @@ func main() {
 		fmt.Printf("psql-tmp: missing file operand\n")
 		fmt.Printf("Try 'psql-tmp --help' for more information\n")
 		os.Exit(1)
+	} else if len(os.Args) > 2 {
+		fmt.Printf("psql-tmp: too many arguments\n")
+		fmt.Printf("Try 'psql-tmp --help' for more information\n")
+		os.Exit(1)
 	}
 
 	if os.Args[1] == "--help" {
